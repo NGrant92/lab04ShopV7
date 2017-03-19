@@ -58,7 +58,7 @@ public class Butter extends DairyProduct
 	
 	public String toString()
 	{
-		return super.toString() + "\nPacket Grams: " + packetGrams + "g" + "\nIs salted? " + isSalted + "\n Product: MILK";
+		return super.toString() + "\nPacket Grams: " + packetGrams + "g" + "\nIs salted? " + isSalted + "\nProduct: BUTTER";
 	}
 }
 

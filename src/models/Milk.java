@@ -58,7 +58,7 @@ public class Milk extends DairyProduct
 	
 	public String toString()
 	{
-		return super.toString() + "\nCarton Size: " + cartonSize + "ml" + "\nFat Content: " + fatContent + "mg\n Product: MILK";
+		return super.toString() + "\nCarton Size: " + cartonSize + "ml" + "\nFat Content: " + fatContent + "mg\nProduct: MILK";
 	}
 }
 

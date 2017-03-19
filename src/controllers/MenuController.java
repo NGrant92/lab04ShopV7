@@ -173,10 +173,10 @@ public class MenuController
 		   char dairyProduct = input.next().toLowerCase().charAt(0);
 		   if(dairyProduct == 'b')
 		   {
-			   int packetGrams = validNextInt("Enter amount of grams per packet: ");
+			   int packetGrams = validNextInt("\tEnter amount of grams per packet: ");
 			   
 			   boolean isSalted = false;
-			   System.out.print("Is it salted? (y/n)");
+			   System.out.print("\tIs it salted? (y/n)");
 			   char salted = input.next().toLowerCase().charAt(0);
 			   if(salted == 'y')
 			   {
@@ -189,21 +189,19 @@ public class MenuController
 		   }
 		   else if(dairyProduct == 'm')
 		   {
-			   int packetGrams = validNextInt("Enter amount of grams per packet: ");
+			   int cartonSize = validNextInt("\tEnter amount of grams per packet: ");
 			   
-			   System.out.print("Enter fat content: ");
+			   System.out.print("\tEnter fat content: ");
 			   String fatContent = input.nextLine();
 			   
 			   
 			   return (new Milk(productName, productCode, unitCost, inCurrentProductLine, 
-					   bestBeforeDate, packetGrams, fatContent));
+					   bestBeforeDate, cartonSize, fatContent));
 		   }
 		   else
 		   {
 			   return (new Product(productName, productCode, unitCost, inCurrentProductLine));
 		   }
-		   
-		   
      }
 
 	 private int getIndex()
