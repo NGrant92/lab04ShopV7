@@ -165,6 +165,8 @@ public class MenuController
 		   if ((currentProduct == 'y') || (currentProduct == 'Y'))
 			   inCurrentProductLine = true;
 		   
+		   
+		   
 		   return (new Product(productName, productCode, unitCost, inCurrentProductLine));
      }
 
