@@ -1,6 +1,5 @@
 package models;
 
-import java.time.*;
 import java.util.*;
 /**
  * DairyProduct is a subclass of Product
@@ -48,7 +47,7 @@ public class DairyProduct extends Product
 	
 	public String toString()
 	{
-		return super.toString() + "\nBes Before Date: " + bestBeforeDate;
+		return super.toString() + "\nBest Before Date: " + bestBeforeDate;
 	}
 }
 
