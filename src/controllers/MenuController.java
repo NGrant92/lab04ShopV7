@@ -1,8 +1,10 @@
 package controllers;
-import java.util.Scanner;
+import java.util.*;
 
 import static utils.ScannerInput.*;
 
+import models.Butter;
+import models.Milk;
 import models.Product;
 
 /**
@@ -165,9 +167,43 @@ public class MenuController
 		   if ((currentProduct == 'y') || (currentProduct == 'Y'))
 			   inCurrentProductLine = true;
 		   
+		   Date bestBeforeDate = validNextDate("\tEnter best before date: (dd/MM/yyy)");
+		   
+		   System.out.print("\tIs this product Butter or Milk?");
+		   char dairyProduct = input.next().toLowerCase().charAt(0);
+		   if(dairyProduct == 'b')
+		   {
+			   int packetGrams = validNextInt("Enter amount of grams per packet: ");
+			   
+			   boolean isSalted = false;
+			   System.out.print("Is it salted? (y/n)");
+			   char salted = input.next().toLowerCase().charAt(0);
+			   if(salted == 'y')
+			   {
+				   isSalted = true;
+			   }
+			   
+			   return (new Butter(productName, productCode, unitCost, inCurrentProductLine, 
+					   bestBeforeDate, packetGrams, isSalted));
+			   
+		   }
+		   else if(dairyProduct == 'm')
+		   {
+			   int packetGrams = validNextInt("Enter amount of grams per packet: ");
+			   
+			   System.out.print("Enter fat content: ");
+			   String fatContent = input.nextLine();
+			   
+			   
+			   return (new Milk(productName, productCode, unitCost, inCurrentProductLine, 
+					   bestBeforeDate, packetGrams, fatContent));
+		   }
+		   else
+		   {
+			   return (new Product(productName, productCode, unitCost, inCurrentProductLine));
+		   }
 		   
 		   
-		   return (new Product(productName, productCode, unitCost, inCurrentProductLine));
      }
 
 	 private int getIndex()
